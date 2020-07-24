@@ -83,7 +83,7 @@ export const useDownVoteComment = (
   setStatus: any,
   setScore: any
 ) => {
-  const { data, trigger } = useQueryOnCallback({
+  const { trigger } = useQueryOnCallback({
     method: "post",
     url: `${process.env.REACT_APP_SERVER_URL}/api/comment/downvote`,
     initialValues: { error: "", data: {} },
