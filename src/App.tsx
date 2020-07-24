@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useReducer } from "react";
+import AppContext from "./Contexts/AppContext";
+import AppReducer from "./Reducers/AppReducer";
+import { State } from "./types";
+import { AppRouter } from "./Routes";
 
 function App() {
+
+  const initialState : State = {
+    user: null,
+    active: "posts",
+    page: 1,
+  }
+
+  console.log(process.env.REACT_APP_SERVER_URL)
+  const [state, dispatch] = useReducer(AppReducer, initialState)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <AppContext.Provider value={{state, dispatch}}>
+        <AppRouter/>
+      </AppContext.Provider>
   );
 }
 
