@@ -11,7 +11,11 @@ export default async function useIsLoggedOut() {
 
   async function fetchUser() {
     try {
-      const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/user`);
+      const res = await axios({
+        url: `${process.env.REACT_APP_SERVER_URL}/api/user`,
+        withCredentials: true,
+        method: 'post',
+      })
 
       if (res.status !== 200) {
         return;

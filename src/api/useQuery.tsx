@@ -39,6 +39,7 @@ export default function useQuery(options: QueryOptions) {
         method,
         url: typeof url === "string" ? url : url.urlMaker(url.routeParameters),
         data: parameters,
+        withCredentials: true,
       })
         .then((res) => {
           setData(res.data);
@@ -84,6 +85,7 @@ export const useQueryOnCallback = (options: QueryOptions) => {
           url:
             typeof url === "string" ? url : url.urlMaker(url.routeParameters),
           data: parameters,
+          withCredentials: true,
         })
           .then((res) => {
             setData(res.data);

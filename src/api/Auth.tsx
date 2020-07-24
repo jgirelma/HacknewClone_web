@@ -6,25 +6,43 @@ import AppContext from "../Contexts/AppContext";
 const axios = ax.default;
 
 function useIsLoggedIn() {
-  return axios.post(`${process.env.REACT_APP_SERVER_URL}/api/user`)
+  return axios({
+    method: 'post',
+    url: `${process.env.REACT_APP_SERVER_URL}/api/user`,
+    withCredentials: true,
+    })
 }
 
 export { useIsLoggedIn as IsLoggedIn };
 
 async function Login(data : any) {
-  return axios.post(`${process.env.REACT_APP_SERVER_URL}/api/login`, data)
+  return axios({
+    url: `${process.env.REACT_APP_SERVER_URL}/api/login`,
+    data,
+    withCredentials: true,
+    method: 'post',
+  })
 }
 
 export { Login as LoginPost }
 
 export default async function Logout() {
-  return axios.post(`${process.env.REACT_APP_SERVER_URL}/api/logout`)
+  return axios({
+    url: `${process.env.REACT_APP_SERVER_URL}/api/logout`,
+    method: 'post',
+    withCredentials: true,
+  })
 }
 
 export { Logout as LogoutPost }
 
 async function Register(data : any) {
-  return axios.post(`${process.env.REACT_APP_SERVER_URL}/api/register`, data)
+  return axios({
+    url: `${process.env.REACT_APP_SERVER_URL}/api/register`,
+    method: 'post',
+    data,
+    withCredentials: true,
+  })
 }
 
 export { Register as RegisterPost }
