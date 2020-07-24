@@ -12,13 +12,13 @@ function useIsLoggedIn() {
 export { useIsLoggedIn as IsLoggedIn };
 
 async function Login(data : any) {
-  return axios.post(`${process.env.REACT_APP_SERVER_URL}api/login`, data)
+  return axios.post(`${process.env.REACT_APP_SERVER_URL}/api/login`, data)
 }
 
 export { Login as LoginPost }
 
 export default async function Logout() {
-  return axios.post(`${process.env.REACT_APP_SERVER_URL}api/logout`)
+  return axios.post(`${process.env.REACT_APP_SERVER_URL}/api/logout`)
 }
 
 export { Logout as LogoutPost }
