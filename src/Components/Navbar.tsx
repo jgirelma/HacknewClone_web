@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="hidden md:visible px-2 md:px-0 bg-white py-4 border-b border-gray-300">
+      <div className="md:block hidden px-2 md:px-0 bg-white py-4 border-b border-gray-300">
         <header className="font-mono container flex justify-between mx-auto items-center">
           <div className="text-2xl w-1/3">HackerNews Clone</div>
           <div className="w-1/3 flex text-lg justify-center items-center">
@@ -43,7 +43,7 @@ export default function Navbar() {
           </div>
         </header>
       </div>
-      <div className="visible md:hidden px-2 md:px-0 bg-white py-2 border-b border-gray-300">
+      <div className="md:hidden px-2 md:px-0 bg-white py-2 border-b border-gray-300">
         <header className="font-mono container flex justify-between mx-auto items-center">
           <div className="text-xl">HackerNews Clone</div>
           {!open ? (
