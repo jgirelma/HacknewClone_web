@@ -68,12 +68,12 @@ export default function Navbar() {
           <div className="font-mono container space-y-1 divide-y">
             <div>
               <Link to="/">
-                <div onClick={() => setOpen(!open)} className="div">
+                <div onClick={() => setOpen(!open)} className="my-1">
                   Home
                 </div>
               </Link>
               <Link to="/newpost">
-                <div onClick={() => setOpen(!open)} className="div">
+                <div onClick={() => setOpen(!open)} className="my-1">
                   New Post
                 </div>
               </Link>
@@ -83,7 +83,7 @@ export default function Navbar() {
                 <Link to="/logout">
                   <div
                     onClick={() => setOpen(!open)}
-                    className="hover:text-green-400"
+                    className="hover:text-green-400 my-1"
                   >
                     Logout
                   </div>
@@ -94,7 +94,7 @@ export default function Navbar() {
                 <Link to="/login">
                   <div
                     onClick={() => setOpen(!open)}
-                    className="hover:text-green-400"
+                    className="hover:text-green-400 my-1"
                   >
                     Login
                   </div>
@@ -102,7 +102,7 @@ export default function Navbar() {
                 <Link to="/register">
                   <div
                     onClick={() => setOpen(!open)}
-                    className="hover:text-green-400"
+                    className="hover:text-green-400 my-1"
                   >
                     Register
                   </div>

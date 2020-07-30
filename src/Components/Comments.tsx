@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 export default function Comments() {
   const { state } = useContext(CommentsContext);
   const { id } = useParams();
-  const { } = useComments(id);
+  const { trigger } = useComments(id);
 
   if (!state.ready) {
     return <div></div>;
