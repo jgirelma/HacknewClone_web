@@ -80,8 +80,9 @@ export const useComments = (id : number) => {
   
   
   useEffect(() => {
+    state.setReloadComments(() => trigger)
     trigger()
-  }, []) 
+ }, []) 
 
   return { trigger }
 }
