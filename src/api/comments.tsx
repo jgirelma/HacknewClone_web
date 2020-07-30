@@ -66,6 +66,7 @@ export const useComments = (id : number) => {
     initialValues: { error: '', data: {}},
     callback: {
       resolve: (res) => {
+        state.setRoots([])
         const [commentsMap, roots] = createCommentsGraph(res.data.comments)
         state.setComments(commentsMap);
         state.setRoots(roots);

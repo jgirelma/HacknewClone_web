@@ -21,29 +21,29 @@ function OpenComment({ setOpen, commentId }: any) {
   const comment = comments.get(commentId);
 
   return (
-    <div className="mb-2">
-      <div className="flex content-center h-4 items-center text-gray-900 text-sm">
+    <div className="">
+      <div className="flex flex-wrap content-center h-4 items-center text-gray-900 text-sm">
         <span className="text-green-600">
           {comment.firstname} {comment.lastname}
         </span>
-        <span style={{ position: "relative", top: "-4px" }} className="mx-2">
+        <span style={{ position: "relative", top: "-4px" }} className="invisible md:visible mx-2">
           .
         </span>
         <span className="text-gray-600">
           {timeSince(comment.timestamp)} ago
         </span>
-        <span style={{ position: "relative", top: "-4px" }} className="mx-2">
+        <span style={{ position: "relative", top: "-4px" }} className="invisible md:visible mx-2">
           .
         </span>
         <CommentScore score={score}></CommentScore>
         <button
           onClick={() => setOpen(false)}
-          className="ml-2 text-gray-600 text-xs"
+          className="md:ml-2 text-gray-600 text-xs"
         >
           [Collapse]
         </button>
       </div>
-      <div className="text-base mt-2">{comment.body}</div>
+      <div className="text-base mt-4">{comment.body}</div>
       <ReplyBox commentId={commentId} setScore={setScore} />
       <div className="border w-full mt-2"></div>
       <div className="subcomments ml-6 mt-4">

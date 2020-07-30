@@ -6,10 +6,10 @@ export default function SortSelector({context} : any) {
   const { state, dispatch } = useContext(context);
 
   return (
-    <div className="container mx-auto mt-4 font-mono">
-      <div className="flex justify-start w-1/6">
-        <div className="bg-white rounded px-4 py-2">Order By:</div>
-        <div className="absolute px-4 py-2 ml-32 bg-white rounded w-40 hover:border-2">
+    <div className="container mx-auto mt-4 font-mono text-sm md:text-base">
+      <div className="flex justify-between md:justify-start items-start md:w-1/6">
+        <h1 className="bg-white rounded px-4 py-2">Order By:</h1>
+        <div className="md:absolute px-4 py-2 md:ml-32 bg-white rounded w-40 md:hover:border-2">
           {!open ? (
             <div onClick={() => setOpen(!open)} className="">
               {state.order}
@@ -78,10 +78,10 @@ export function SortSelectorForComments() {
   const { state } = useContext(CommentsContext);
 
   return (
-    <div className="container mx-auto mt-4 font-mono">
-      <div className="flex justify-start w-1/6">
+    <div className="container mx-auto mt-4 font-mono text-sm md:text-base">
+      <div className="flex justify-between md:justify-start items-start md:w-1/6">
         <div className="bg-white rounded px-4 py-2">Order By:</div>
-        <div className="absolute px-4 py-2 ml-32 bg-white rounded w-40 hover:border-2">
+        <div className="md:absolute px-4 py-2 ml-32 bg-white rounded w-40 md:hover:border-2">
           {!open ? (
             <div onClick={() => setOpen(!open)} className="">
               {state.order}

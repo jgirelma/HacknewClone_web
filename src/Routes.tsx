@@ -1,8 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React from "react";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
@@ -15,19 +11,21 @@ import NewPost from "./Pages/NewPost";
 import { useLoggedIn } from "./api/Auth";
 
 export const AppRouter = () => {
-  useLoggedIn()
+  useLoggedIn();
 
   return (
     <Router>
       <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home}></Route>
-        <Route path="/post/:id" component={Post}></Route>
-        <Route path="/newpost" component={NewPost}></Route>
-        <Route path="/login" component={Login}></Route>
-        <Route path="/register" component={Register}></Route>
-        <Route path="/logout" component={Logout}></Route>
-      </Switch>
+      <div className="px-2 md:px-0">
+        <Switch>
+          <Route exact path="/" component={Home}></Route>
+          <Route path="/post/:id" component={Post}></Route>
+          <Route path="/newpost" component={NewPost}></Route>
+          <Route path="/login" component={Login}></Route>
+          <Route path="/register" component={Register}></Route>
+          <Route path="/logout" component={Logout}></Route>
+        </Switch>
+      </div>
       <Bottom />
     </Router>
   );

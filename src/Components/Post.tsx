@@ -43,18 +43,20 @@ function PostInner({
           {noTruncate ? post.body : truncate(post.body, 100)}
         </div>
       </Link>
-      <div className="flex items-center text-gray-600 text-sm divide-x divide-gray-600">
-        <div>
+      <div className="flex flex-col md:flex-row md:items-center text-gray-600 text-sm md:divide-x md:divide-gray-600">
+        <div className="md:pr-4">
           Posted by
           <span className="text-green-600 mx-2">
             {post.firstname} {post.lastname}
           </span>
           {timeSince(post.timestamp)} ago
         </div>
-        <VotePost />
-        <div className="ml-2 pl-2">
-          <PostScore></PostScore>
-        </div>
+        <div className="flex divide-x divide-gray-600 space-x-4 md:flex-none">
+            <VotePost />
+            <div className="ml-4 pl-4">
+              <PostScore></PostScore>
+            </div>
+          </div>
       </div>
     </div>
   );

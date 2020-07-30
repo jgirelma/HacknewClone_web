@@ -14,8 +14,8 @@ export const VotePost = () => {
   const { downVoteTrigger } = useDownVotePost(post.id);
 
   return (
-    <div className="ml-2 flex divide-x divide-gray-900">
-      <div className="pl-2 flex text-mono text-gray-600 text-sm">
+    <div className="md:ml-2 flex divide-x divide-gray-900">
+      <div className="md:pl-2 flex text-mono text-gray-600 text-sm">
         <button
           onClick={() => {
             if (!state.user) history.push("/login");

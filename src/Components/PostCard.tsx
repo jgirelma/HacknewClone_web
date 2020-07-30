@@ -10,9 +10,8 @@ function truncate(str: string, limit: number) {
 }
 
 export function PostCard({ myPost, noTruncate }: any) {
-  const [post, setPost] = useState(myPost)
-  const [reply, setReply] = useState("")
-
+  const [post, setPost] = useState(myPost);
+  const [reply, setReply] = useState("");
 
   return (
     <PostContext.Provider value={{ post, setPost, reply, setReply }}>
@@ -26,26 +25,28 @@ function PostCardInner({ noTruncate }: { noTruncate: boolean }) {
 
   return (
     <>
-    <div className="p-4">
-      <div className="font-semibold text-xl">{post.title}</div>
-      <div className="text-gray-900 mt-2 mb-4 overflow-hidden">
-        {noTruncate ? post.body : truncate(post.body, 100)}
-      </div>
-      <div className="flex items-center text-gray-600 text-sm divide-x divide-gray-600">
-        <div>
-          Posted by
-          <span className="text-green-600 mx-2">
-            {post.firstname} {post.lastname}
-          </span>
-          {timeSince(post.timestamp)} ago
+      <div className="p-4">
+        <div className="font-semibold text-xl">{post.title}</div>
+        <div className="text-gray-900 mt-2 mb-4 overflow-hidden">
+          {noTruncate ? post.body : truncate(post.body, 100)}
         </div>
-        <VotePost />
-        <div className="ml-2 pl-2">
-          <PostScore></PostScore>
+        <div className="flex flex-col md:flex-row md:items-center text-gray-600 text-sm md:divide-x md:divide-gray-600">
+          <div className="md:pr-4">
+            Posted by
+            <span className="text-green-600 mx-2">
+              {post.firstname} {post.lastname}
+            </span>
+            {timeSince(post.timestamp)} ago
+          </div>
+          <div className="flex divide-x divide-gray-600 md:flex-none">
+            <VotePost />
+            <div className="ml-4 pl-4">
+              <PostScore></PostScore>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <ReplyBoxForPost />
+      <ReplyBoxForPost />
     </>
   );
 }
