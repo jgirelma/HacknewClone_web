@@ -12,7 +12,7 @@ export default function Post() {
   const [roots, setRoots] = useState([])
   const [ready, setReady] = useState(false)
   const [comments, setComments] = useState({})
-  const [reloadComments, setReloadComments] = useState(null)
+  const [reloadComments, setReloadComments] = useState(() => {})
 
   const [order, orderDispatch] = useReducer(OrderReducer, "Newest")
 
@@ -29,7 +29,6 @@ export default function Post() {
     order,
     orderDispatch
   };
-
   
   return (
     <CommentsContext.Provider value={{ state }}>
