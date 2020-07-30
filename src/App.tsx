@@ -12,7 +12,6 @@ function App() {
     page: 1,
   }
 
-  console.log(process.env.REACT_APP_SERVER_URL)
   const [state, dispatch] = useReducer(AppReducer, initialState)
   
   return (
