@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import Comment from "./Comment";
 import { SortSelectorForComments } from "./SortSelector";
 import CommentsContext from "../Contexts/CommentsContext";
